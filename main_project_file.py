@@ -92,19 +92,15 @@ def level_2():
             if (x, y - 18) in path and (x, y - 18) not in visited:  # check the cell down
                 cell = (x, y - 18) #coordinate for the cell down
                 pixels_visited[cell] = x, y
-                # blue.goto(cell)
-                # blue.stamp()
                 queue.append(cell) # adds cell to queue list
                 visited.append((x, y - 14.5)) # adds cell to visited list
                 # print(solution)
-            if(x + 18, y) in path and (x + 18, y) not in visited:   # check the cell on the  right
+            if (x + 18, y) in path and (x + 18, y) not in visited:   # check the cell right
                 cell = (x + 18, y) #coordinate for the cell right
                 pixels_visited[cell] = x, y
-                # blue.goto(cell)
-                # blue.stamp()
                 queue.append(cell) # adds cell to queue list
                 visited.append((x + 18, y)) # adds cell to visited list
-            if(x, y + 18) in path and (x, y + 18) not in visited:  # check the cell up
+            if (x, y + 18) in path and (x, y + 18) not in visited:  # check the cell up
                 cell = (x, y + 18) #coordinate for the cell up
                 pixels_visited[cell] = x, y
                 queue.append(cell) # adds cell to queue list

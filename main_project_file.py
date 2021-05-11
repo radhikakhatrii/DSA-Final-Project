@@ -72,7 +72,45 @@ def level_2():
     
     #create a function that visits all the paths and search for a path from the start of our maze to the end
     def Breadth_First_Search(x, y):
-        pass
+    queue.append((x, y))     # nodes are appended in the queue for bfs 
+    pixels_visited[x, y] = x, y  #this dictionary keeps track of pixels visited during bfs
+    #defining turtle specifications 
+    tracker = turtle.Turtle() 
+    tracker.shape('square')
+    tracker.color('black')
+    tracker.penup() #hides the working of turtle in background from the user
+    tracker.speed(0) #hides the moving turtle across the screen
+    tracker.shapesize(1, 1, 1) #the size helps us to fit the maze within the window frame
+    while len(queue) > 0: #while queue is not empty 
+        time.sleep(0) #executes the next line of code 
+        x,y = queue.pop(0) #the first element from queue is popped
+        if(x - 18, y) in path and (x - 18, y) not in visited: #check the cell left 
+                cell = (x - 18, y) #coordinate for the cell left
+                pixels_visited[cell] = x, y
+                queue.append(cell)   # adds cell to queue list
+                visited.append((x-18, y))  # adds cell to visited list
+            if (x, y - 18) in path and (x, y - 18) not in visited:  # check the cell down
+                cell = (x, y - 18) #coordinate for the cell down
+                pixels_visited[cell] = x, y
+                # blue.goto(cell)
+                # blue.stamp()
+                queue.append(cell) # adds cell to queue list
+                visited.append((x, y - 14.5)) # adds cell to visited list
+                # print(solution)
+            if(x + 18, y) in path and (x + 18, y) not in visited:   # check the cell on the  right
+                cell = (x + 18, y) #coordinate for the cell right
+                pixels_visited[cell] = x, y
+                # blue.goto(cell)
+                # blue.stamp()
+                queue.append(cell) # adds cell to queue list
+                visited.append((x + 18, y)) # adds cell to visited list
+            if(x, y + 18) in path and (x, y + 18) not in visited:  # check the cell up
+                cell = (x, y + 18) #coordinate for the cell up
+                pixels_visited[cell] = x, y
+                queue.append(cell) # adds cell to queue list
+                visited.append((x, y + 18)) # adds cell to visited list
+            tracker.goto(x, y)
+            tracker.stamp()
         #use the links attached in the "project_refernce_link" file to create this function
 
     #traverse over all the paths found and print the path that goes from start till end only

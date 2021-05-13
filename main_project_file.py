@@ -280,7 +280,7 @@ def level_4():
     window.delay(0)  # a helpful function for faster execution
     # the background of main window is defined as black
     window.bgcolor("black")
-    window.title("Level 2")  # tentative window name
+    window.title("Level 4")  # tentative window name
     window.setup(1200, 700)  # window dimensions to suit the size of maze
 
     # this function creates the walls of the maze and assigns the pixels of the paths that can be visited by the player

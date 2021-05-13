@@ -104,7 +104,7 @@ def level_2():
                 pixels_visited[cell] = x, y
                 queue.append(cell)  # adds cell to queue list
                 visited.append((x, y - 14.5))  # adds cell to visited list
-                # print(solution)
+                # print(pixels_visited)
             if (x + 14.5, y) in path and (x + 14.5, y) not in visited:   # check the cell right
                 cell = (x + 14.5, y)  # coordinate for the cell right
                 pixels_visited[cell] = x, y
@@ -357,7 +357,7 @@ def level_4():
                 pixels_visited[cell] = x, y
                 queue.append(cell)  # adds cell to queue list
                 visited.append((x, y - 10))  # adds cell to visited list
-                # print(solution)
+                # print(pixels_visited)
             if (x + 10, y) in path and (x + 10, y) not in visited:   # check the cell right
                 cell = (x + 10, y)  # coordinate for the cell right
                 pixels_visited[cell] = x, y

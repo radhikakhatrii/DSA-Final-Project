@@ -1,5 +1,5 @@
 # DSA-Final-Project
-Maze Runner.
+# Maze Runner.
 
 INSTRUCTIONS:
 1. All the files should be loaded into a single folder.

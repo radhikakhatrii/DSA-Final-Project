@@ -195,7 +195,16 @@ def level_2():
              '+   +++++   +++++   +   +   +++++++++   +++++   +++++   +++++++++   +   +++++   +',
              '+       +               +               +                       +               +',
              '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++']  # define a maze for our level
-
+    #we use this function to find the coordinates of the screen to start creating the maze from those coordinates so that it fits the screen size
+    # def buttonclick(x,y): 
+    #     print("You clicked at this coordinate({0},{1})".format(x,y))
+  
+    # #onscreen function to send coordinate
+    # turtle.onscreenclick(buttonclick,1) 
+    # turtle.listen()  # listen to incoming connections
+    # turtle.speed(10) # set the speed
+    # turtle.done()    # hold the screen
+    
     # calling all the functions within our main function
     create_maze_level_2(frame)
     #we comment out the BFS function once we have completed all steps to generate the final path

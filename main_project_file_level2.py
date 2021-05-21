@@ -128,31 +128,39 @@ def level_2():
         back_track.shapesize(0.67, 0.67, 0.67)
         back_track.goto(x, y)
         back_track.stamp()
-        #the method below has a pre-requisite of running the BFS function first where we search for all pixels that can be visited in the pixels_visited dictionary
+        # the method below has a pre-requisite of running the BFS function first where we search for all pixels that can be visited in the pixels_visited dictionary
         # while (x, y) != (begin_x, begin_y):
         #     back_track.goto(pixels_visited[x, y])
         #     back_track.stamp()
         #     x, y = pixels_visited[x, y]
-        #we instead use this alternate method where we ony run BFS once and calculate all the pixels that are there in the shortest path so that when timer gets over, the user doesnt have to wait a long time of waiting for BFS to look what the shortest path was
+        # we instead use this alternate method where we ony run BFS once and calculate all the pixels that are there in the shortest path so that when timer gets over, the user doesnt have to wait a long time of waiting for BFS to look what the shortest path was
         # final_path=[]
-        #while (x, y) != (begin_x, begin_y):
+        # while (x, y) != (begin_x, begin_y):
         #   x, y = pixels_visited[x, y]
         #   final_path.append((x,y))
-        #print(final_path)
-        #using the solution above we print the final path in the terminal and then copy the solution into a final_path variable
-        final_path = [(-5.0, -38.5), (-19.5, -38.5), (-34.0, -38.5), (-48.5, -38.5), (-48.5, -24.0), (-48.5, -9.5), (-48.5, 5.0), (-48.5, 19.5), (-63.0, 19.5), (-77.5, 19.5), (-77.5, 5.0), (-77.5, -9.5), (-92.0, -9.5), (-106.5, -9.5), (-121.0, -9.5), (-135.5, -9.5), (-135.5, 5.0), (-135.5, 19.5), (-135.5, 34.0), 
-        (-135.5, 48.5), (-121.0, 48.5), (-106.5, 48.5), (-92.0, 48.5), (-77.5, 48.5), (-63.0, 48.5), (-48.5, 48.5), (-48.5, 63.0), (-48.5, 77.5), (-48.5, 92.0), (-48.5, 106.5), (-48.5, 121.0), (-48.5, 135.5), (-34.0, 135.5), (-19.5, 135.5), (-5.0, 135.5), (9.5, 135.5), (9.5, 121.0), (9.5, 106.5), (9.5, 92.0), 
-        (9.5, 77.5), (9.5, 63.0), (9.5, 48.5), (24.0, 48.5), (38.5, 48.5), (53.0, 48.5), (67.5, 48.5), (82.0, 48.5), (96.5, 48.5), (111.0, 48.5), (125.5, 48.5), (125.5, 34.0), (125.5, 19.5), (125.5, 5.0), (125.5, -9.5), (125.5, -24.0), (125.5, -38.5), (140.0, -38.5), (154.5, -38.5), (169.0, -38.5), (183.5, -38.5), 
-        (183.5, -24.0), (183.5, -9.5), (183.5, 5.0), (183.5, 19.5), (183.5, 34.0), (183.5, 48.5), (198.0, 48.5), (212.5, 48.5), (227.0, 48.5), (241.5, 48.5), (241.5, 63.0), (241.5, 77.5), (227.0, 77.5), (212.5, 77.5), (198.0, 77.5), (183.5, 77.5), (169.0, 77.5), (154.5, 77.5), (140.0, 77.5), (125.5, 77.5), (111.0, 77.5), 
-        (96.5, 77.5), (82.0, 77.5), (67.5, 77.5), (67.5, 92.0), (67.5, 106.5), (67.5, 121.0), (67.5, 135.5), (67.5, 150.0), (67.5, 164.5), (53.0, 164.5), (38.5, 164.5), (24.0, 164.5), (9.5, 164.5), (-5.0, 164.5), (-19.5, 164.5), (-34.0, 164.5), (-48.5, 164.5), (-63.0, 164.5), (-77.5, 164.5), (-77.5, 179.0), (-77.5, 193.5), 
-        (-63.0, 193.5), (-48.5, 193.5), (-48.5, 208.0), (-48.5, 222.5), (-63.0, 222.5), (-77.5, 222.5), (-92.0, 222.5), (-106.5, 222.5), (-121.0, 222.5), (-135.5, 222.5), (-135.5, 208.0), (-135.5, 193.5), (-135.5, 179.0), (-135.5, 164.5), (-150.0, 164.5), (-164.5, 164.5), (-179.0, 164.5), (-193.5, 164.5), (-193.5, 150.0), 
-        (-193.5, 135.5), (-179.0, 135.5), (-164.5, 135.5), (-164.5, 121.0), (-164.5, 106.5), (-150.0, 106.5), (-135.5, 106.5), (-121.0, 106.5), (-106.5, 106.5), (-106.5, 92.0), (-106.5, 77.5), (-121.0, 77.5), (-135.5, 77.5), (-150.0, 77.5), (-164.5, 77.5), (-179.0, 77.5), (-193.5, 77.5), (-208.0, 77.5), (-222.5, 77.5), (-222.5, 92.0), 
-        (-222.5, 106.5), (-237.0, 106.5), (-251.5, 106.5), (-251.5, 92.0), (-251.5, 77.5), (-251.5, 63.0), (-251.5, 48.5), (-266.0, 48.5), (-280.5, 48.5), (-295.0, 48.5), (-309.5, 48.5), (-324.0, 48.5), (-338.5, 48.5), (-353.0, 48.5), (-367.5, 48.5), (-382.0, 48.5), (-396.5, 48.5), (-411.0, 48.5), (-425.5, 48.5), (-425.5, 34.0), (-425.5, 19.5), 
-        (-440.0, 19.5), (-454.5, 19.5), (-469.0, 19.5), (-483.5, 19.5), (-483.5, 5.0), (-483.5, -9.5), (-498.0, -9.5), (-512.5, -9.5), (-527.0, -9.5), (-541.5, -9.5), (-541.5, 5.0), (-541.5, 19.5), (-541.5, 34.0), (-541.5, 48.5), (-541.5, 63.0), (-541.5, 77.5), (-541.5, 92.0), (-541.5, 106.5), (-541.5, 121.0), (-541.5, 135.5), (-541.5, 150.0),
-        (-541.5, 164.5), (-527.0, 164.5), (-512.5, 164.5), (-512.5, 179.0), (-512.5, 193.5), (-512.5, 208.0), (-512.5, 222.5), (-527.0, 222.5), (-541.5, 222.5), (-541.5, 237.0), (-541.5, 251.5), (-527.0, 251.5), (-512.5, 251.5), (-512.5, 266.0), (-512.5, 280.5), (-527.0, 280.5), (-541.5, 280.5), (-556.0, 280.5), (-570.5, 280.5), (-585.0, 280.5)]
+        # print(final_path)
+        # using the solution above we print the final path in the terminal and then copy the solution into a final_path variable
+        final_path = [(-5.0, -38.5), (-19.5, -38.5), (-34.0, -38.5), (-48.5, -38.5), (-48.5, -24.0), (-48.5, -9.5), (-48.5, 5.0), (-48.5, 19.5), (-63.0, 19.5), (-77.5, 19.5), (-77.5, 5.0), (-77.5, -9.5), (-92.0, -9.5), (-106.5, -9.5), (-121.0, -9.5), (-135.5, -9.5), (-135.5, 5.0), (-135.5, 19.5), (-135.5, 34.0),
+                      (-135.5, 48.5), (-121.0, 48.5), (-106.5, 48.5), (-92.0, 48.5), (-77.5, 48.5), (-63.0, 48.5), (-48.5, 48.5), (-48.5, 63.0), (-48.5, 77.5), (-48.5,
+                                                                                                                                                                 92.0), (-48.5, 106.5), (-48.5, 121.0), (-48.5, 135.5), (-34.0, 135.5), (-19.5, 135.5), (-5.0, 135.5), (9.5, 135.5), (9.5, 121.0), (9.5, 106.5), (9.5, 92.0),
+                      (9.5, 77.5), (9.5, 63.0), (9.5, 48.5), (24.0, 48.5), (38.5, 48.5), (53.0, 48.5), (67.5, 48.5), (82.0, 48.5), (96.5, 48.5), (111.0, 48.5), (125.5, 48.5), (
+                          125.5, 34.0), (125.5, 19.5), (125.5, 5.0), (125.5, -9.5), (125.5, -24.0), (125.5, -38.5), (140.0, -38.5), (154.5, -38.5), (169.0, -38.5), (183.5, -38.5),
+                      (183.5, -24.0), (183.5, -9.5), (183.5, 5.0), (183.5, 19.5), (183.5, 34.0), (183.5, 48.5), (198.0, 48.5), (212.5, 48.5), (227.0, 48.5), (241.5, 48.5), (241.5,
+                                                                                                                                                                             63.0), (241.5, 77.5), (227.0, 77.5), (212.5, 77.5), (198.0, 77.5), (183.5, 77.5), (169.0, 77.5), (154.5, 77.5), (140.0, 77.5), (125.5, 77.5), (111.0, 77.5),
+                      (96.5, 77.5), (82.0, 77.5), (67.5, 77.5), (67.5, 92.0), (67.5, 106.5), (67.5, 121.0), (67.5, 135.5), (67.5, 150.0), (67.5, 164.5), (53.0, 164.5), (38.5,
+                                                                                                                                                                         164.5), (24.0, 164.5), (9.5, 164.5), (-5.0, 164.5), (-19.5, 164.5), (-34.0, 164.5), (-48.5, 164.5), (-63.0, 164.5), (-77.5, 164.5), (-77.5, 179.0), (-77.5, 193.5),
+                      (-63.0, 193.5), (-48.5, 193.5), (-48.5, 208.0), (-48.5, 222.5), (-63.0, 222.5), (-77.5, 222.5), (-92.0, 222.5), (-106.5, 222.5), (-121.0, 222.5), (-135.5,
+                                                                                                                                                                         222.5), (-135.5, 208.0), (-135.5, 193.5), (-135.5, 179.0), (-135.5, 164.5), (-150.0, 164.5), (-164.5, 164.5), (-179.0, 164.5), (-193.5, 164.5), (-193.5, 150.0),
+                      (-193.5, 135.5), (-179.0, 135.5), (-164.5, 135.5), (-164.5, 121.0), (-164.5, 106.5), (-150.0, 106.5), (-135.5, 106.5), (-121.0, 106.5), (-106.5, 106.5), (-106.5,
+                                                                                                                                                                                92.0), (-106.5, 77.5), (-121.0, 77.5), (-135.5, 77.5), (-150.0, 77.5), (-164.5, 77.5), (-179.0, 77.5), (-193.5, 77.5), (-208.0, 77.5), (-222.5, 77.5), (-222.5, 92.0),
+                      (-222.5, 106.5), (-237.0, 106.5), (-251.5, 106.5), (-251.5, 92.0), (-251.5, 77.5), (-251.5, 63.0), (-251.5, 48.5), (-266.0, 48.5), (-280.5, 48.5), (-295.0, 48.5), (-309.5,
+                                                                                                                                                                                          48.5), (-324.0, 48.5), (-338.5, 48.5), (-353.0, 48.5), (-367.5, 48.5), (-382.0, 48.5), (-396.5, 48.5), (-411.0, 48.5), (-425.5, 48.5), (-425.5, 34.0), (-425.5, 19.5),
+                      (-440.0, 19.5), (-454.5, 19.5), (-469.0, 19.5), (-483.5, 19.5), (-483.5, 5.0), (-483.5, -9.5), (-498.0, -9.5), (-512.5, -9.5), (-527.0, -9.5), (-541.5, -9.5), (-541.5,
+                                                                                                                                                                                      5.0), (-541.5, 19.5), (-541.5, 34.0), (-541.5, 48.5), (-541.5, 63.0), (-541.5, 77.5), (-541.5, 92.0), (-541.5, 106.5), (-541.5, 121.0), (-541.5, 135.5), (-541.5, 150.0),
+                      (-541.5, 164.5), (-527.0, 164.5), (-512.5, 164.5), (-512.5, 179.0), (-512.5, 193.5), (-512.5, 208.0), (-512.5, 222.5), (-527.0, 222.5), (-541.5, 222.5), (-541.5, 237.0), (-541.5, 251.5), (-527.0, 251.5), (-512.5, 251.5), (-512.5, 266.0), (-512.5, 280.5), (-527.0, 280.5), (-541.5, 280.5), (-556.0, 280.5), (-570.5, 280.5), (-585.0, 280.5)]
         for i in final_path:
-           back_track.goto(i)
-           back_track.stamp()
+            back_track.goto(i)
+            back_track.stamp()
     frame = ['+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++',
              's                       +                   +                       +           +',
              '+++++   +++++   +++++++++   +++++   +++++++++   +++++   +++++++++   +   +++++   +',
@@ -194,36 +202,48 @@ def level_2():
              '+   +++++   +++++   +   +   +++++++++   +++++   +++++   +++++++++   +   +++++   +',
              '+       +               +               +                       +               +',
              '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++']  # define a maze for our level
-    #we use this function to find the coordinates of the screen to start creating the maze from those coordinates so that it fits the screen size
-    # def buttonclick(x,y): 
+    # we use this function to find the coordinates of the screen to start creating the maze from those coordinates so that it fits the screen size
+    # def buttonclick(x,y):
     #     print("You clicked at this coordinate({0},{1})".format(x,y))
-  
+
     # #onscreen function to send coordinate
-    # turtle.onscreenclick(buttonclick,1) 
+    # turtle.onscreenclick(buttonclick,1)
     # turtle.listen()  # listen to incoming connections
     # turtle.speed(10) # set the speed
     # turtle.done()    # hold the screen
-    
+
     # calling all the functions within our main function
     create_maze_level_2(frame)
-    #we comment out the BFS function once we have completed all steps to generate the final path
+    # we comment out the BFS function once we have completed all steps to generate the final path
     # Breadth_First_Search(begin_x, begin_y)
+    import threading
+
+    def timer():         # timer fucntion
+        window.title('GAME OVERR!!')
+        back_tracking(finish_x, finish_y)
+
+    delay = 90  # calls backtracking function after 1 and a half minute
+    start_time = threading.Timer(delay, timer)
+    start_time.start()
     # back_tracking(finish_x, finish_y)
 
-    #now we will create functions for our player to move the turtle
-    start = (begin_x, begin_y)      #this records the coordinates of our destination point on screen
-    #creating a function to move our turtle forward in the y direction
+    # now we will create functions for our player to move the turtle
+    # this records the coordinates of our destination point on screen
+    start = (begin_x, begin_y)
+    # creating a function to move our turtle forward in the y direction
+
     def forward():
-        global turtle_current_y     #var to keep track of the coordinate where our turtle currently is
+        # var to keep track of the coordinate where our turtle currently is
+        global turtle_current_y
         new_coordinates = (turtle_current_x, turtle_current_y + 14.5)
-        if new_coordinates == start:        #checks if the new position found is not our destination
-            window.resetscreen()            #if it is then game is over
-        if (new_coordinates in path):       #checks if the coordinates are in the path available to move
+        if new_coordinates == start:  # checks if the new position found is not our destination
+            window.resetscreen()  # if it is then game is over
+        if (new_coordinates in path):  # checks if the coordinates are in the path available to move
             turtle_current_y += 14.5
             turtle.goto(turtle_current_x, turtle_current_y)
             turtle.stamp()
 
-    #creating a function to move our turtle backward in the y direction
+    # creating a function to move our turtle backward in the y direction
     def backward():
         global turtle_current_y
         new_coordinates = (turtle_current_x, turtle_current_y - 14.5)
@@ -234,7 +254,7 @@ def level_2():
             turtle.goto(turtle_current_x, turtle_current_y)
             turtle.stamp()
 
-    #creating a function to move our turtle left in the x direction
+    # creating a function to move our turtle left in the x direction
     def left():
         global turtle_current_x
         new_coordinates = (turtle_current_x - 14.5, turtle_current_y)
@@ -245,7 +265,7 @@ def level_2():
             turtle.goto(turtle_current_x, turtle_current_y)
             turtle.stamp()
 
-    #creating a function to move our turtle right in the x direction
+    # creating a function to move our turtle right in the x direction
     def right():
         global turtle_current_x
         new_coordinates = (turtle_current_x + 14.5, turtle_current_y)
@@ -270,7 +290,7 @@ def level_2():
     turtle_current_y = finish_y
     turtle.goto(turtle_current_x, turtle_current_y)
 
-    #assigns all the functions we created to the respective arrow keys
+    # assigns all the functions we created to the respective arrow keys
     turtle.onkey(forward, 'Up')
     turtle.onkey(backward, 'Down')
     turtle.onkey(left, 'Left')
@@ -279,7 +299,7 @@ def level_2():
     turtle.color("#800000")
     turtle.listen()
 
-    #exits the window when we click on it after the process ends
+    # exits the window when we click on it after the process ends
     window.exitonclick()
 
 

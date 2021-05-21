@@ -176,7 +176,7 @@ def level_1():
 
     create_maze_level_1(frame)
     # Breadth_First_Search(begin_x, begin_y)
-    back_tracking(finish_x, finish_y)
+    #back_tracking(finish_x, finish_y)
 
     #now we will create functions for our player to move the turtle
     start = (begin_x, begin_y)      #this records the coordinates of our destination point on screen

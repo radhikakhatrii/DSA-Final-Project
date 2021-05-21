@@ -1,7 +1,6 @@
 # importing libraries that might and might not have a potential usage in the program
 import turtle                    # import turtle library
 import time
-import sys
 import tkinter
 
 # defining global variables to be used for all levels

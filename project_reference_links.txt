@@ -2,6 +2,9 @@ Use the following links to take help in creating the breadth_first_search_functi
 https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/
 https://stackoverflow.com/questions/58688299/python-maze-bfs-shortest-path
 https://www.makeschool.com/mediabook/oa/tutorials/trees-and-mazes/solving-the-maze/
+https://www.codespeedy.com/call-a-function-after-some-interval-in-python/
+https://zetcode.com/tkinter/snake/
+https://www.codegrepper.com/code-examples/python/python+game+over+screen
 
 Use the following link to take help in creating the back_tracking function, studying the parts we discussed in our zoom meeting
 https://www.includehelp.com/algorithms/backtracking-types-and-algorithms.aspx

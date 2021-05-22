@@ -7,3 +7,4 @@ INSTRUCTIONS:
 3. Each level has a seperate file.
 4. The entire folder should be loaded into VS Code before attempting to run the game.
 5. The game will be run through a file named 'Project'.
+6. The timer fucntion will only work if you run the files individually, once the time is over it will diaplay 'GAME OVERR!!'.
